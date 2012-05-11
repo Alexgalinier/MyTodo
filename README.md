@@ -14,6 +14,14 @@ A standalone todo list in a html file. It uses LocalStorage to keep informations
 * Change number of lists displayed by row
 * Todos are unique in each browser, they can't be shared but they stay available even after a shutdown
 
+## Roadmap
+
+* Create a Chrome extension with mytodo.html
+
+## Ressources
+
+Use beautiful icons from http://gentleface.com/free_icon_set.html
+
 ## About the Author
 
 MyTodo is created and maintained by Alex Galinier, a web developer at [Prometil](http://www.prometil.com)
