@@ -1,0 +1,51 @@
+/*
+ * This file is part of Gus CSS.
+ *
+ * (c) 2012 Alexandre GALINIER (http://www.alexgalinier.com)
+ *
+ * For the full copyright and license information, please view the 
+ * license.txt file that is distributed with this source code.
+ */
+
+
+/* GUSCSS [GRID] Variable
+   ----------------------------------------------- */
+
+@gridsystem-width: (@grid-column-width * @grid-columns) + (@grid-gutter-width * @grid-columns);
+
+
+
+/* GUSCSS [GRID] Functions
+   ----------------------------------------------- */
+
+.column(@grid-columns-number) {
+    display: inline;
+	float: left;
+	width: (((@grid-gutter-width + @grid-column-width) * @grid-columns-number - @grid-gutter-width)) * 1px;
+	margin: 0 @grid-gutter-width * .5 * 1px;
+}
+
+.column-no-margin(@grid-columns-number) {
+    display: inline;
+	float: left;
+	width: (@grid-columns-number / @grid-columns) * @gridsystem-width * 1px;
+	margin: 0;
+}
+
+.column-percent(@grid-columns-number) {
+    display: inline;
+	float: left;
+	width: (((@grid-gutter-width + @grid-column-width) * @grid-columns-number - @grid-gutter-width) / @gridsystem-width) * 100%;
+	margin: 0 ((@grid-gutter-width * .5) / @gridsystem-width) * 100%;
+}
+
+.column-percent-no-margin(@grid-columns-number) {
+    display: inline;
+	float: left;
+	width: (@grid-columns-number / @grid-columns) * 100%;
+	margin: 0;
+}
+
+.row() {
+    .hlp-clearfix();
+}

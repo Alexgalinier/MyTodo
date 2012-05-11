@@ -1,0 +1,74 @@
+/*
+ * This file is part of Gus CSS.
+ *
+ * (c) 2012 Alexandre GALINIER (http://www.alexgalinier.com)
+ *
+ * For the full copyright and license information, please view the 
+ * license.txt file that is distributed with this source code.
+ */
+
+
+/* GUSCSS [HELPERS] Class
+   ----------------------------------------------- */
+
+.container-centered {.hlp-container-centered();}
+
+.left {text-align: left;}
+.right {text-align: right;}
+.center {text-align: center;}
+
+.hidden {.hlp-hidden();}
+.invisible {.hlp-invisible();}
+
+.menu {
+    ul {padding-left: 0; margin: 0;}
+    ul li {list-style: none;}
+}
+
+.ir {.hlp-ir();}
+
+
+
+/* GUSCSS [HELPERS] Function
+   ----------------------------------------------- */
+
+.hlp-container-centered(@container-width: 960px) {
+    margin: 0 auto; 
+    width: @container-width;
+    display: block;
+}
+
+.hlp-size(@height: 5px, @width: 5px) {
+    height: @height;
+	width: @width;
+}
+
+.hlp-square(@size: 5px) {
+	.hlp-size(@size, @size);
+}
+
+.hlp-clearfix() {
+    &:before, &:after {content: ""; display: table;}
+    &:after {clear: both;}
+}
+
+.hlp-hidden() {
+    display: none;
+}
+
+.hlp-invisible() {
+    visibility: hidden;
+}
+
+.hlp-ir (){
+    display: block;
+    border: 0;
+    text-indent: -999em;
+    overflow: hidden;
+    background-color: transparent;
+    background-repeat: no-repeat; 
+    text-align: left; 
+    direction: ltr; 
+
+    br {display: none;}
+}

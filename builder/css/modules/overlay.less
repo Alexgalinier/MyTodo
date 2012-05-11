@@ -1,0 +1,61 @@
+.overlay() 
+{
+    #overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,.5);
+        z-index: 20;
+        display: none;
+        
+        #overlay-modify-todo, #overlay-delete-todo, #overlay-delete-list, #overlay-add-list {
+            width: 60%;
+            margin: 200px auto;
+            .border-radius(5px);
+            .gradient-v(rgb(230,230,230), rgb(210,210,210), rgb(235,235,235));
+            .box-shadow();
+            display: none;
+
+            p {
+                color: red;
+            }
+        }
+
+        .overlay-content {
+            border-bottom: 1px solid rgb(170,170,170);
+            padding: 1em;
+        }
+
+        .overlay-buttons {
+            border-top: 1px solid rgb(255,255,255);
+            padding: .7em;
+            text-align: right;
+        }
+
+        input[type="text"] {
+            font-size: 17px;
+            padding: .7em;
+            .border-radius();
+            .inner-shadow();
+            width: 100%;
+            border: 1px solid rgb(150,150,150);
+            background: white;
+        }
+
+        input[type="button"] {
+            width: 100px;
+            font-size: 15px;
+            text-align: center;
+            .gradient-v(rgb(220,220,220), rgb(230,230,230), rgb(190,190,190));
+            border: 1px solid rgb(130,130,130);
+            color: @color-text;
+            text-shadow: 0 1px 1px rgba(255,255,255,.5);
+            
+            &:hover {
+                .gradient-v(rgb(210,210,210), rgb(220,220,220), rgb(200,200,200));
+            }
+        }
+    }
+}

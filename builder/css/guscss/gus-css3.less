@@ -1,0 +1,131 @@
+/*
+ * This file is part of Gus CSS.
+ *
+ * (c) 2012 Alexandre GALINIER (http://www.alexgalinier.com)
+ *
+ * For the full copyright and license information, please view the 
+ * license.txt file that is distributed with this source code.
+ */
+
+
+/* GUSCSS [CSS3] Border
+   ----------------------------------------------- */
+
+.bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+    border-top: solid 1px @top-color;
+    border-left: solid 1px @left-color;
+    border-right: solid 1px @right-color;
+    border-bottom: solid 1px @bottom-color;
+}
+
+.border-radius(@radius: 7px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+
+
+/* GUSCSS [CSS3] Shadow
+   ----------------------------------------------- */
+
+.box-shadow(@x-axis: 0, @y-axis: 1px, @blur: 3px, @color: rgba(0,0,0,.6)) {
+    -webkit-box-shadow: @x-axis @y-axis @blur @color;
+    -moz-box-shadow: @x-axis @y-axis @blur @color;
+    box-shadow: @x-axis @y-axis @blur @color;
+}
+.inner-shadow(@x-axis: 0, @y-axis: 1px, @blur: 3px, @color: rgba(0,0,0,.6)) {
+    -webkit-box-shadow: inset @x-axis @y-axis @blur @color;
+    -moz-box-shadow: inset @x-axis @y-axis @blur @color;
+    box-shadow: inset @x-axis @y-axis @blur @color;
+}
+.no-box-shadow() {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+/* GUSCSS [CSS3] Gradient Background
+   ----------------------------------------------- */
+
+.gradient-h (@default-color: #444, @start-color: #555, @end-color: #333) {
+    background-color: @default-color;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, right top, from(@start-color), to(@end-color)); /* Konqueror */
+    background-image: -moz-linear-gradient(left, @start-color, @end-color); /* FF 3.6+ */
+    background-image: -ms-linear-gradient(left, @start-color, @end-color); /* IE10 */
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @start-color), color-stop(100%, @end-color)); /* Safari 4+, Chrome 2+ */
+    background-image: -webkit-linear-gradient(left, @start-color, @end-color); /* Safari 5.1+, Chrome 10+ */
+    background-image: -o-linear-gradient(left, @start-color, @end-color); /* Opera 11.10 */
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(start-colorstr='%d', endColorstr='%d', GradientType=1)",@start-color,@end-color)); /* IE6 & IE7 */
+    -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(start-colorstr='%d', endColorstr='%d', GradientType=1)",@start-color,@end-color); /* IE8+ */
+    background-image: linear-gradient(left, @start-color, @end-color); /* the standard */
+}
+.gradient-v (@default-color: #444, @start-color: #555, @end-color: #333) {
+    background-color: @default-color;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(@start-color), to(@end-color)); /* Konqueror */
+    background-image: -moz-linear-gradient(@start-color, @end-color); /* FF 3.6+ */
+    background-image: -ms-linear-gradient(@start-color, @end-color); /* IE10 */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @start-color), color-stop(100%, @end-color)); /* Safari 4+, Chrome 2+ */
+    background-image: -webkit-linear-gradient(@start-color, @end-color); /* Safari 5.1+, Chrome 10+ */
+    background-image: -o-linear-gradient(@start-color, @end-color); /* Opera 11.10 */
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(start-colorstr='%d', endColorstr='%d', GradientType=0)",@start-color,@end-color)); /* IE6 & IE7 */
+    -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(start-colorstr='%d', endColorstr='%d', GradientType=0)",@start-color,@end-color); /* IE8+ */
+    background-image: linear-gradient(@start-color, @end-color); /* the standard */
+}
+
+
+
+/* GUSCSS [CSS3] Opacity
+   ----------------------------------------------- */
+
+.opacity(@opacity: 0.5) {
+    filter: e(%("alpha(opacity=%d)", @opacity));
+    -moz-opacity: @opacity;
+    -khtml-opacity: @opacity;
+    opacity: @opacity;
+}
+
+
+
+/* GUSCSS [CSS3] Transition
+   ----------------------------------------------- */
+
+.transition(@range: all, @duration: .5s, @ease: ease-out) {
+    -webkit-transition: @range @duration @ease;
+    -moz-transition: @range @duration @ease;
+    transition: @range @duration @ease;
+}
+
+
+
+/* GUSCSS [CSS3] Transformation
+   ----------------------------------------------- */
+
+.skew(@angle-x: 35, @angle-y: 0) {
+	-webkit-transform: skew(formatstring("{0}deg", @angle-x), formatstring("{0}deg", @angle-y));
+	-moz-transform: skew(formatstring("{0}deg", @angle-x), formatstring("{0}deg", @angle-y));
+	-o-transform: skew(formatstring("{0}deg", @angle-x), formatstring("{0}deg", @angle-y));
+	-ms-transform: skew(formatstring("{0}deg", @angle-x), formatstring("{0}deg", @angle-y));
+	transform: skew(formatstring("{0}deg", @angle-x), formatstring("{0}deg", @angle-y));
+}
+.rotation(@deg: 5deg){
+    -webkit-transform: rotate(@deg);
+    -moz-transform: rotate(@deg);
+    transform: rotate(@deg);
+}
+.scale(@ratio: 1.5){
+    -webkit-transform: scale(@ratio);
+    -moz-transform: scale(@ratio);
+    transform: scale(@ratio);
+}
+.translate(@x: 0, @y: 0) {
+    -moz-transform: translate(@x, @y);
+    -webkit-transform: translate(@x, @y);
+    -o-transform: translate(@x, @y);
+    -ms-transform: translate(@x, @y);
+    transform: translate(@x, @y);
+}

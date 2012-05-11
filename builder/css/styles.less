@@ -1,0 +1,132 @@
+/*
+ * This file is part of Gus CSS.
+ *
+ * (c) 2012 Alexandre GALINIER (http://www.alexgalinier.com)
+ *
+ * For the full copyright and license information, please view the 
+ * license.txt file that is distributed with this source code.
+ */
+
+
+/* GUSCSS Variables
+   ----------------------------------------------- */
+
+@color-bg: rgb(255,255,255);
+@color-text: rgb(64,64,64);
+@color-link: rgb(65,180,210);
+@color-title: rgb(0,0,0);
+@color-selection-bg: rgb(55,80,130);
+@color-selection: rgb(255,255,255);
+@color-hr: rgb(210,210,210);
+
+@font-family : "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+@font-size : 15px;
+
+@grid-column-width: 60;
+@grid-gutter-width: 20;
+@grid-columns: 12;
+
+
+
+/* YOUR Variables
+   ----------------------------------------------- */
+
+@yellow-bg: rgba(250, 200, 0, .5);
+@red-bg: rgba(200, 10, 10, .5);
+@blue-bg: rgba(150, 180, 200, .5);
+@green-bg: rgba(160, 190, 70, .5);
+@pink-bg: rgba(200, 150, 200, .5);
+@brown-bg: rgba(200, 130, 100, .5);
+@orange-bg: rgba(255, 160, 30, .5);
+@maroon-bg: rgba(120,20,40,.5);
+@hard-blue-bg: rgba(0,140,180,.5);
+@hard-brown-bg: rgba(150,140,130,.5);
+
+
+/* GUSCSS Imports
+   ----------------------------------------------- */
+
+@import "guscss/gus-base.less";
+@import "guscss/gus-css3.less";
+@import "guscss/gus-helpers.less";
+@import "guscss/gus-grid.less";
+//@import "guscss/gus-styles.less";
+
+
+
+/* YOUR Imports
+   ----------------------------------------------- */
+
+@import "modules/header.less";
+@import "modules/content.less";
+@import "modules/overlay.less";
+
+
+
+/* YOUR Styles
+   ----------------------------------------------- */
+
+
+body {
+    background: url('images/bg.png') repeat rgb(220,220,220);
+
+    .header();
+    .content();
+    .overlay();
+
+    .add-todo, input[type="button"] {
+        .gradient-v(rgba(0,0,0,.4), rgba(0,0,0,.2), rgba(0,0,0,.4));
+        border: 1px solid rgba(0,0,0,.7);
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        padding: .3em .7em;
+        .border-radius(5px);
+
+        .add-todo-plus {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-right: .3em;
+        }
+
+        &:hover {
+            text-decoration: none;
+            .gradient-v(rgba(0,0,0,.4), rgba(0,0,0,.3), rgba(0,0,0,.6));
+        }
+    }
+}
+
+
+
+/* GUSCSS Print
+   ----------------------------------------------- */
+
+@import "guscss/gus-print.less";
+@media print {
+    body {
+        header {
+            display: none;
+        }
+
+        section {
+            .list {
+                border-bottom: 1px solid rgba(0,0,0,.2);
+                border-right: 1px solid rgba(0,0,0,.2);
+                .no-box-shadow();
+
+                h2 {
+                    border-bottom: none;
+                }
+
+                .delete-list, .add-todo-content {
+                    display: none;
+                }
+
+                .list-table-actions {
+                    img {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

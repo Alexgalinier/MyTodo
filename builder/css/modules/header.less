@@ -1,0 +1,45 @@
+.header()
+{
+    header {
+        background: black;
+        padding: 1em;
+        border-bottom: 1px solid black;
+        .box-shadow(0, 3px, 3px, rgba(0,0,0,.4));
+        .gradient-v(rgb(30,30,30), rgb(30,30,30), rgb(50,50,50));
+        position: relative;
+        z-index: 20;
+        .hlp-clearfix();
+
+        h1 {
+            display: inline;
+            margin: 0;
+            color: white;
+            text-shadow: 0 0 10px white;
+            font-weight: bold;
+        }
+
+        a {
+            margin-left: 1em;
+            .border-radius(3px);
+            .gradient-v(rgb(0,110,150), rgb(0,150,190), rgb(0,120,160));
+            padding: .7em 2em;
+            color: white;
+            font-size: 13px;
+
+            &:hover {
+                text-decoration: none;
+                .gradient-v(rgb(0,140,180), rgb(0,180,220), rgb(0,150,190));
+            }
+        }
+
+        label {
+            margin-left: 1em;
+            color: white;
+        }
+
+        select {
+            color: white;
+        }
+    }   
+
+}
