@@ -17,7 +17,7 @@ The manifest file help the mytodo.html to be available offline. Go to http://ale
 
 ## Roadmap
 
-* Create a Chrome extension with mytodo.html
+* Make urls clickable in todos
 
 ## Ressources
 
