@@ -1,6 +1,7 @@
 # MyTodo
 
 A standalone todo list in a html file. It uses LocalStorage to keep informations. It is available on Chrome, Safari, Firefox and Opera.
+The manifest file help the mytodo.html to be available offline. Go to http://alexgalinier.com/sites/mytodo/mytodo.html to use it !
 
 ## Description
 

@@ -3,7 +3,7 @@
     ob_start();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en" manifest="mytodo.manifest">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>My Todo</title>
