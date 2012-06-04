@@ -14,10 +14,11 @@ The manifest file help the mytodo.html to be available offline. Go to http://ale
 * Change text size from Normal to Smaller
 * Change number of lists displayed by row
 * Todos are unique in each browser, they can't be shared but they stay available even after a shutdown
+* Urls are clickable
 
 ## Roadmap
 
-* Make urls clickable in todos
+* Change list name
 
 ## Ressources
 
