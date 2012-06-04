@@ -13,7 +13,7 @@ var Overlay = {
         this.contentModified = content;
         this.prepareOverlay('overlay-modify-todo');
         $('#overlay').show();
-        $('#overlay-modify-todo-input').val(content).focus();
+        $('#overlay-modify-todo-input').val(Data.removeUrlTags(content)).focus();
     },
 
     showDeleteTodo : function(item, content) {

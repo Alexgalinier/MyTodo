@@ -12,8 +12,8 @@
    ----------------------------------------------- */
 
 @color-bg: rgb(255,255,255);
-@color-text: rgb(64,64,64);
-@color-link: rgb(65,180,210);
+@color-text: rgb(51,51,51);
+@color-link: rgb(51,51,51);
 @color-title: rgb(0,0,0);
 @color-selection-bg: rgb(55,80,130);
 @color-selection: rgb(255,255,255);
@@ -73,6 +73,10 @@ body {
     .header();
     .content();
     .overlay();
+
+    a, a:link, a:visited {
+        font-weight: bold;
+    }
 
     .add-todo, input[type="button"] {
         .gradient-v(rgba(0,0,0,.4), rgba(0,0,0,.2), rgba(0,0,0,.4));

@@ -172,5 +172,15 @@ var Data = {
     clear : function() {
         localStorage.removeItem('my-todo');
         return true;
+    },
+    
+    setUrlTags : function(text) {
+        var exp = /((https?|ftp)\:\/\/([\w-]+\.)?([\w-])+\.(\w)+\/?[\w\?\.\=\&\-\#\+\/]+)/ig;
+        return text.replace(exp,'<a href="$1" target="_blank">$1</a>'); 
+    },
+    
+    removeUrlTags : function(text) {
+        var exp = /<a.*?>(.*?)<\/a>/g;
+        return text.replace(exp,'$1'); 
     }
 };

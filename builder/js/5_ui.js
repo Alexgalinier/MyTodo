@@ -120,7 +120,7 @@ var UI = {
         listTable.append(
             '<tr id="'+todoId+'" '+trClass+'>'+
                 '<td class="list-table-checkbox">'+checkboxImg+'</td>'+
-                '<td>'+text+'</td>'+
+                '<td>'+Data.setUrlTags(text)+'</td>'+
                 '<td class="list-table-actions"><img src="images/edit.png" class="img-edit" title="Edit" alt="Edit"><img src="images/delete_16x16.png" class="img-delete" title="Delete" alt="Delete"></td>'+
             '</tr>');
         
@@ -138,7 +138,7 @@ var UI = {
     },
     
     modifyTodo : function(todoId, text) {
-        $('#'+todoId).find('td:nth-child(2)').html(text);
+        $('#'+todoId).find('td:nth-child(2)').html(Data.setUrlTags(text));
     },
     
     removeTodo : function(id) {
